@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF Potential Assessment Interface</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4a853;
+  --gold-bg: rgba(212,168,83,0.06);
+  --gold-border: rgba(212,168,83,0.2);
+}
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #fafafa;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+header {
+  @apply bg-gold text-white font-semibold py-4;
+  text-align: center;
+}
+.container {
+  @apply max-w-6xl mx-auto p-6;
+}
+.table-responsive {
+  @apply overflow-x-auto;
+}
+table {
+  @apply w-full bg-white divide-divide;
+  border-radius: .5rem;
+}
+th, td {
+  @apply px-4 py-2.5 text-left text-sm font-medium text-gray-900 whitespace-nowrap;
+}
+th {
+  @apply bg-gray-50;
+}
+tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gold-bg text-gold border border-gold-border;
+}
+.card {
+  @apply bg-white rounded-lg shadow-sm;
+}
+.unit-header {
+  @apply flex justify-between items-center;
+}
+.unit-number {
+  @apply font-medium;
+}
+.unit-details {
+  @apply grid grid-cols-2 gap-1.5 text-sm text-gray-600;
+}
+.unit-details div {
+  @apply flex items-center justify-between;
+}
+.unit-details div span {
+  @apply font-medium;
+}
+</style>
+</head>
+<body class="bg-gray-100">
+<header class="text-center">
+  <h1 class="text-2xl font-bold">ETF Potential Assessment</h1>
+</header>
+<main class="container">
+  <div class="flex flex-col sm:flex-row gap-4">
+    <!-- Language selector -->
+    <div class="flex items-center gap-2">
+      <label for="lang-select" class="text-sm font-medium">Language:</label>
+      <select id="lang-select" class="input font-medium">
+        <option value="en">English</option>
+        <option value="th">Thai</option>
+      </select>
+    </div>
+
+    <!-- Simple ETF filter -->
+    <div class="flex items-center gap-2">
+      <label for="etf-search" class="text-sm font-medium">ETF Symbol:</label>
+      <input type="text" id="etf-search" class="input font-medium" placeholder="e.g., TCAT">
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <div class="flex justify-between items-center">
+      <div class="text-sm text-gray-600">Potential Score:</div>
+      <div class="text-2xl font-semibold text-gold">84%</div>
+    </div>
+
+    <div class="mt-2">
+      <div class="progress">
+        <div class="progress-bar bg-gradient-to-r from-gold to-gold" style="width: 84%; box-shadow: 0 0 8px var(--gold-glow);"></div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <div class="flex flex-col sm:flex-row items-start gap-4">
+        <div class="flex items-center gap-2 rounded-md bg-gold-bg text-gold px-3 py-1 text-xs">
+          <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L6 7l5 5 9-9L12 2z"/></svg>
+          <span>Positive Momentum</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-md bg-gold-bg text-gold px-3 py-1 text-xs">
+          <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L6 11l5 9 9-9L12 2z"/></svg>
+          <span>Risk Level</span>
+        </div>
+        <div class="flex items-center gap-2 rounded-md bg-gold-bg text-gold px-3 py-1 text-xs">
+          <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2V22M8 14V8l4 4"/></svg>
+          <span>Coverage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="text-lg font-semibold text-gray-800">Key Metrics</h2>
+      <div class="grid grid-cols-3 gap-2 mt-2">
+        <div class="rounded-md bg-gold-bg text-gold text-center px-3 py-2 text-xs">
+          AUM: <span class="font-medium">$1.2B</span>
+        </div>
+        <div class="rounded-md bg-gold-bg text-gold text-center px-3 py-2 text-xs">
+          52‑wk Return: <span class="font-medium">+18.4%</span>
+        </div>
+        <div class="rounded-md bg-gold-bg text-gold text-center px-3 py-2 text-xs">
+          Expense Ratio: <span class="font-medium">0.35%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
